@@ -25,12 +25,12 @@ public class ArrayOps {
         int firstMax = max2[0];
         int secondMax = max2[1];
 
-        for (int j = 2; j < max2.length -1; j++) {
+        for (int j = 1; j < max2.length; j++) {
 
             if (max2[j] > firstMax){
                 secondMax = firstMax;
                 firstMax = max2[j];
-            } else if (secondMax < max2[j] && max2[j] < firstMax) {
+            } else if (max2[j] > secondMax && max2[j] < firstMax) {
                 secondMax = max2[j];
             }   
         }
