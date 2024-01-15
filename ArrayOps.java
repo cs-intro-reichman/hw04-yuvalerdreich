@@ -30,7 +30,7 @@ public class ArrayOps {
             if (max2[j] > firstMax){
                 secondMax = firstMax;
                 firstMax = max2[j];
-            } else if (max2[j] > secondMax && max2[j] < firstMax) {
+            } else if (max2[j] > secondMax) {
                 secondMax = max2[j];
             }   
         }
