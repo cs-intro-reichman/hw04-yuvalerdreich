@@ -25,7 +25,7 @@ public class ArrayOps {
         int firstMax = max2[0];
         int secondMax = max2[1];
 
-        for (int j = 0; j < max2.length -1; j++) {
+        for (int j = 2; j < max2.length -1; j++) {
 
             if (max2[j] > firstMax){
                 secondMax = firstMax;
