@@ -26,8 +26,19 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        string a = "";
+		
+		for (int i = 0; i < a.length(); i++) {
+
+			if ((c >= 'A') && (c <= 'Z')) {
+				a += (char) (c + 32);	
+
+			} else if ((c >= 'a') && (c <= 'z')) {
+				a += (char) (c - 32);
+			}
+		}
+    
+    return "";
     }
 
     public static String camelCase (String string) {
@@ -40,3 +51,4 @@ public class StringOps {
         return new int[1];
     }
 }
+
