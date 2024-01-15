@@ -23,8 +23,12 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         System.out.println(capVowelsLowRest("Hello World"));
-        
+        //int[] result = allIndexOf("Hello world", 'l');
+        //printArray(result);
+
     }
+        
+        
 
     public static String capVowelsLowRest (String string) {
         char[] result = new char[string.length()];
@@ -52,14 +56,60 @@ public class StringOps {
 
 
 
-    public static String camelCase (String string) {
-        // Write your code here:
-        return "";
-    }
+    //public static String camelCase (String string) {
+
+       // char[] result = new char[string.length()];
+
+        //for (int i = 0; i < string.length(); i++) {
+    //        char ch = string.charAt(i);
+
+    //        if(result[i] == ' ') {
+    //            i++;
+    //        }
+
+    //        }
+    //        return "";
+    //    }
+        
+    //private static boolean isUpper(char ch) {
+    //    return 
+    //} 
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count = 0;
+
+        for(int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                count++;
+                
+            }
+            
+        }
+
+        int[] result = new int[count];
+        int index = 0;
+
+        for (int i = 0; i < string.length(); i++) { 
+
+            if (string.charAt(i) == chr) {
+                result[index++] = i;
+            }
+
+        }
+
+        return result;
     }
+
+    //public static void printArray(int[] arr) {
+        //System.out.print("{");
+        //for (int i = 0; i < arr.length; i++) {
+            //System.out.print(arr[i]);
+            //if (i < arr.length - 1) {
+                //System.out.print(", ");
+            //}
+        //}
+        //System.out.println("}");
+    //}
+
 }
 
