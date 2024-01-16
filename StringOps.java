@@ -80,7 +80,7 @@ public class StringOps {
             }
 
             if (string.charAt(i) == ' ') {
-                isFirst = false;
+                isCapital = true;
 
             }
 
