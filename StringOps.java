@@ -94,7 +94,7 @@ public class StringOps {
 
         } else {
 
-            return (char) (ch);
+            return ch;
         }
             
     } 
@@ -104,7 +104,7 @@ public class StringOps {
             return (char) (ch - 'a' + 'A');
             
         } else {
-            return (char) (ch);
+            return ch;
         }
     }
 
