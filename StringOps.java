@@ -67,6 +67,7 @@ public class StringOps {
                 ans += isLower(string.charAt(i));
                 isFirst = true;
                 isCapital = false;
+                continue;
 
             }
             if (isCapital && string.charAt(i) != ' ') {
