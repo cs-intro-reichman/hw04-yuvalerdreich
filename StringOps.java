@@ -49,41 +49,78 @@ public class StringOps {
         return new String(result);
     }
 
-    private static boolean isVowel(char ch) {
+    public static boolean isVowel(char ch) {
 
         return "aeiouAEIOU".indexOf(ch) != -1;
     }
 
 
 
-    //public static String camelCase (String string) {
+    public static String camelCase (String string) {
+        boolean isCapital = false;
+        boolean isFirst = false;
+        String ans = "";
 
-       // char[] result = new char[string.length()];
+        for (int i = 0; i < string.length(); i++) {
 
-        //for (int i = 0; i < string.length(); i++) {
-    //        char ch = string.charAt(i);
+            if(!isFirst && string.charAt(i) != ' ') {
+                ans += isLower(string.charAt(i));
+                isFirst = true;
+                isCapital = false;
 
-    //        if(result[i] == ' ') {
-    //            i++;
-    //        }
+            }
+            if (isCapital && string.charAt(i) != ' ') {
+                ans += isUpper(string.charAt(i));
+                isCapital = false;
 
-    //        }
-    //        return "";
-    //    }
+            } else if (!isCapital && string.charAt(i) != ' ') {
+                ans += isLower(string.charAt(i));
+
+            }
+
+            if ( string.charAt(i) == ' ') {
+                isCapital = true;
+
+            }
+
+        }
+            return ans;
+        }
         
-    //private static boolean isUpper(char ch) {
-    //    return 
-    //} 
+    public static char isLower(char ch) {
+        if (ch >= 'A' && ch <= 'Z') {
+
+            return (char) (ch - 'A' + 'a');
+
+        } else {
+
+            return (char) (ch);
+        }
+            
+    } 
+
+    public static char isUpper(char ch) {
+        if (ch >= 'a' && ch <= 'z') {
+            return (char) (ch - 'a' + 'A');
+            
+        } else {
+            return (char) (ch);
+        }
+    }
+
+    public static boolean isCapital (char ch) {
+        return ch >= 'A' && ch <= 'Z';
+    }
 
     public static int[] allIndexOf (String string, char chr) {
         int count = 0;
 
         for(int i = 0; i < string.length(); i++) {
+
             if (string.charAt(i) == chr) {
-                count++;
-                
-            }
-            
+
+                count++;  
+            }  
         }
 
         int[] result = new int[count];
