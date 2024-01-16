@@ -22,9 +22,9 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(capVowelsLowRest("Hello World"));
-        int[] result = allIndexOf("Hello world", 'l');
-        printArray(result);
+        //System.out.println(capVowelsLowRest("Hello World"));
+        //int[] result = allIndexOf("Hello world", 'l');
+        //printArray(result);
 
     }
         
@@ -100,16 +100,16 @@ public class StringOps {
         return result;
     }
 
-    public static void printArray(int[] arr) {
-        System.out.print("{");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println("}");
-    }
+    //public static void printArray(int[] arr) {
+        //System.out.print("{");
+        //for (int i = 0; i < arr.length; i++) {
+            //System.out.print(arr[i]);
+            //if (i < arr.length - 1) {
+                //System.out.print(", ");
+            //}
+        //}
+        //System.out.println("}");
+    //}
 
 }
 
