@@ -22,21 +22,132 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        //System.out.println(capVowelsLowRest("Hello World"));
+        //int[] result = allIndexOf("Hello world", 'l');
+        //printArray(result);
+
     }
+        
+        
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        char[] result = new char[string.length()];
+		
+		for (int i = 0; i < string.length(); i++) {
+            
+            char ch = string.charAt(i); 
+
+			if (isVowel(ch)) {
+				result[i] = (char) (ch >= 'a' && ch <= 'z' ? ch - 'a' + 'A' : ch);	
+
+			} else {
+				result[i] = (char) (ch >= 'A' && ch <= 'Z' ? ch - 'A' + 'a' : ch);
+
+			}
+		}
+    
+        return new String(result);
     }
 
+    public static boolean isVowel(char ch) {
+
+        return "aeiouAEIOU".indexOf(ch) != -1;
+    }
+
+
+
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        boolean isCapital = false;
+        boolean isFirst = false;
+        String ans = "";
+
+        for (int i = 0; i < string.length(); i++) {
+
+            if(!isFirst && string.charAt(i) != ' ') {
+                ans += isLower(string.charAt(i));
+                isFirst = true;
+                isCapital = false;
+                continue;
+
+            }
+            if (isCapital && string.charAt(i) != ' ') {
+                ans += isUpper(string.charAt(i));
+                isCapital = false;
+
+            } else if (!isCapital && string.charAt(i) != ' ') {
+                ans += isLower(string.charAt(i));
+
+            }
+
+            if (string.charAt(i) == ' ') {
+                isCapital = true;
+
+            }
+
+        }
+            return ans;
+        }
+        
+    public static char isLower(char ch) {
+        if (ch >= 'A' && ch <= 'Z') {
+
+            return (char) (ch - 'A' + 'a');
+
+        } else {
+
+            return ch;
+        }
+            
+    } 
+
+    public static char isUpper(char ch) {
+        if (ch >= 'a' && ch <= 'z') {
+            return (char) (ch - 'a' + 'A');
+            
+        } else {
+            return ch;
+        }
+    }
+
+    public static boolean isCapital (char ch) {
+        return ch >= 'A' && ch <= 'Z';
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count = 0;
+
+        for(int i = 0; i < string.length(); i++) {
+
+            if (string.charAt(i) == chr) {
+
+                count++;  
+            }  
+        }
+
+        int[] result = new int[count];
+        int index = 0;
+
+        for (int i = 0; i < string.length(); i++) { 
+
+            if (string.charAt(i) == chr) {
+                result[index++] = i;
+            }
+
+        }
+
+        return result;
     }
+
+    //public static void printArray(int[] arr) {
+        //System.out.print("{");
+        //for (int i = 0; i < arr.length; i++) {
+            //System.out.print(arr[i]);
+            //if (i < arr.length - 1) {
+                //System.out.print(", ");
+            //}
+        //}
+        //System.out.println("}");
+    //}
+
 }
+
