@@ -36,7 +36,7 @@ public class StringOps {
 		for (int i = 0; i < string.length(); i++) {
             
             char ch = string.charAt(i); 
-
+			// very good that you used a helper!!!!
 			if (isVowel(ch)) {
 				result[i] = (char) (ch >= 'a' && ch <= 'z' ? ch - 'a' + 'A' : ch);	
 
@@ -45,7 +45,7 @@ public class StringOps {
 
 			}
 		}
-    
+    	//We didn't learn that you can create strings like this, but good thinking.
         return new String(result);
     }
 
@@ -112,6 +112,11 @@ public class StringOps {
     public static boolean isCapital (char ch) {
         return ch >= 'A' && ch <= 'Z';
     }
+	/* 
+ 	I am very pleased that you used helpers as needed!
+	Just a note, when we create helpers we usually make them private and not public
+	*/
+	
 
     public static int[] allIndexOf (String string, char chr) {
         int count = 0;
